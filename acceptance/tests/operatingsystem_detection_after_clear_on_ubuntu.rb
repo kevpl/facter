@@ -14,5 +14,7 @@ agents.each do |agent|
 
   create_remote_file(agent, script_name, script_contents)
 
+  require "puppet/acceptance/common_utils"
+
   on(agent, "#{Puppet::Acceptance::CommandUtils.ruby_command(agent)} #{script_name}")
 end
